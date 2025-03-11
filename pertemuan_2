@@ -1,0 +1,24 @@
+<html>
+<head>  
+<title> Pertemuan 2 Html dasar</title>
+</head>
+<body> 
+<header> <a href="ipwija.ac.id">home</a></header>
+<main> hi<br>
+</main id="main" class="main">
+<section> hello world </section>
+<section id="paragraf"><p>
+<h1>pertemuan 2</h1>
+<h2> html dasar</h2>
+pertemuan dasar html membuat paragraf </br> sederhana dengan huruf <i>miring</i> ,<b>tebal</b></p>
+<ul>
+  <li>1</li>
+  <li>2</li>
+</ul>
+<ol>
+  <li>satu</li>
+  <li>dua</li>
+</ol>
+</section>
+</body>
+</html>
