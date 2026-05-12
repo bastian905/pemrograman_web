@@ -1,0 +1,32 @@
+services:
+  app:
+    build: .
+    container_name: smart-meeting-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: smart_meeting
+      DB_USER: smartuser
+      DB_PASSWORD: smartpass
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: smart-meeting-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: smart_meeting
+      MYSQL_USER: smartuser
+      MYSQL_PASSWORD: smartpass
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  db_data:
